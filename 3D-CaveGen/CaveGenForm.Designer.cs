@@ -71,7 +71,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.worldSlicePictureBox.Location = new System.Drawing.Point(12, 12);
             this.worldSlicePictureBox.Name = "worldSlicePictureBox";
-            this.worldSlicePictureBox.Size = new System.Drawing.Size(459, 257);
+            this.worldSlicePictureBox.Size = new System.Drawing.Size(460, 231);
             this.worldSlicePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.worldSlicePictureBox.TabIndex = 0;
             this.worldSlicePictureBox.TabStop = false;
@@ -203,7 +203,7 @@
             this.GenerationSettings.Controls.Add(this.wallPercentageLabel);
             this.GenerationSettings.Controls.Add(this.wallPercentageInput);
             this.GenerationSettings.Controls.Add(this.generateNewButton);
-            this.GenerationSettings.Location = new System.Drawing.Point(12, 275);
+            this.GenerationSettings.Location = new System.Drawing.Point(12, 249);
             this.GenerationSettings.Name = "GenerationSettings";
             this.GenerationSettings.Size = new System.Drawing.Size(148, 200);
             this.GenerationSettings.TabIndex = 7;
@@ -318,7 +318,7 @@
             this.SmoothingSettings.Controls.Add(this.edgesAreWallsCheckBox);
             this.SmoothingSettings.Controls.Add(this.wallDeletionLabel);
             this.SmoothingSettings.Controls.Add(this.wallDeletionInput);
-            this.SmoothingSettings.Location = new System.Drawing.Point(166, 275);
+            this.SmoothingSettings.Location = new System.Drawing.Point(166, 249);
             this.SmoothingSettings.Name = "SmoothingSettings";
             this.SmoothingSettings.Size = new System.Drawing.Size(305, 81);
             this.SmoothingSettings.TabIndex = 8;
@@ -332,7 +332,7 @@
             this.displaySettings.Controls.Add(this.showYZSliceButton);
             this.displaySettings.Controls.Add(this.showXZSliceButton);
             this.displaySettings.Controls.Add(this.showXYSliceButton);
-            this.displaySettings.Location = new System.Drawing.Point(166, 362);
+            this.displaySettings.Location = new System.Drawing.Point(166, 336);
             this.displaySettings.Name = "displaySettings";
             this.displaySettings.Size = new System.Drawing.Size(305, 113);
             this.displaySettings.TabIndex = 9;
@@ -394,11 +394,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 487);
+            this.ClientSize = new System.Drawing.Size(484, 461);
             this.Controls.Add(this.displaySettings);
             this.Controls.Add(this.SmoothingSettings);
             this.Controls.Add(this.GenerationSettings);
             this.Controls.Add(this.worldSlicePictureBox);
+            this.MinimumSize = new System.Drawing.Size(500, 500);
             this.Name = "CaveGenForm";
             this.Text = "3D Cave Generator";
             ((System.ComponentModel.ISupportInitialize)(this.worldSlicePictureBox)).EndInit();
