@@ -69,14 +69,14 @@ namespace _3D_CaveGen
 
             // fill the map randomly with either true or false
             Random r = new Random();
-            world = new bool[width,height,depth];
+            world = new bool[width, height, depth];
             for (int x = 0; x < world.GetLength(0); x++)
             {
                 for (int y = 0; y < world.GetLength(1); y++)
                 {
                     for (int z = 0; z < world.GetLength(2); z++)
                     {
-                        world[x, y, z] = (decimal)r.NextDouble() > wallPercentage/100;
+                        world[x, y, z] = (decimal)r.NextDouble() > wallPercentage / 100;
                     }
                 }
             }
@@ -113,6 +113,7 @@ namespace _3D_CaveGen
         private void smoothenButton_Click(object sender, EventArgs e)
         {
             byte[,,] smoothWorld = new byte[world.GetLength(0), world.GetLength(1), world.GetLength(2)];
+            bool[,,] newWorld = new bool[world.GetLength(0), world.GetLength(1), world.GetLength(2)];
             byte comparer; // TODO: needs better name
             #region --- smoothen ---
             // for each slice
@@ -145,14 +146,14 @@ namespace _3D_CaveGen
                                     }
                                 }
                                 // if it's the center cell
-                                else if (i==0 && j==0)
+                                else if (i == 0 && j == 0)
                                 {
                                     // do nothing
                                 }
                                 else
                                 {
                                     // if the cell is a wall (and thus not air)
-                                    if (!world[x+i,y+j,z])
+                                    if (!world[x + i, y + j, z])
                                     {
                                         comparer++;
                                     }
@@ -247,25 +248,18 @@ namespace _3D_CaveGen
                             smoothWorld[x, y, z]++;
                         }
                         #endregion
-                    }
-                }
-            }
-            #endregion
 
-            #region --- convert back to boolean world ---
-            for (int x = 0; x < world.GetLength(0); x++)
-            {
-                for (int y = 0; y < world.GetLength(1); y++)
-                {
-                    for (int z = 0; z < world.GetLength(2); z++)
-                    {
+                        #region --- convert back to boolean world ---
                         // if 2 or 3 out of the 3 dimensions say it should be a wall, make it a wall.
                         // otherwise make it air. 
                         world[x, y, z] = !(smoothWorld[x, y, z] > 1);
+                        #endregion
                     }
                 }
             }
             #endregion
+            //update world
+            world = newWorld;
 
             updatePicture();
         }
@@ -325,7 +319,7 @@ namespace _3D_CaveGen
             {
                 for (int y = 0; y < worldSlice.GetLength(1); y++)
                 {
-                    if (worldSlice[x,y])
+                    if (worldSlice[x, y])
                     {
                         picture.SetPixel(x, y, Color.White);
                     }
@@ -392,15 +386,15 @@ namespace _3D_CaveGen
             // show the correct slice range
             if (showXYSlice)
             {
-                shownSliceBar.Maximum = depth-1;
+                shownSliceBar.Maximum = depth - 1;
             }
             else if (showXZSlice)
             {
-                shownSliceBar.Maximum = height-1;
+                shownSliceBar.Maximum = height - 1;
             }
             else if (showYZSlice)
             {
-                shownSliceBar.Maximum = width-1;
+                shownSliceBar.Maximum = width - 1;
             }
         }
         #endregion
