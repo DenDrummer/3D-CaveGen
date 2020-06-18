@@ -360,7 +360,7 @@
             this.showYZSliceButton.Text = "Show YZ slice";
             this.showYZSliceButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.showYZSliceButton.UseVisualStyleBackColor = true;
-            this.showYZSliceButton.CheckedChanged += new System.EventHandler(this.showYZSliceButton_CheckedChanged);
+            this.showYZSliceButton.CheckedChanged += new System.EventHandler(this.updateSliceButtons);
             // 
             // showXZSliceButton
             // 
@@ -374,7 +374,7 @@
             this.showXZSliceButton.Text = "Show XZ slice";
             this.showXZSliceButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.showXZSliceButton.UseVisualStyleBackColor = true;
-            this.showXZSliceButton.CheckedChanged += new System.EventHandler(this.showXZSliceButton_CheckedChanged);
+            this.showXZSliceButton.CheckedChanged += new System.EventHandler(this.updateSliceButtons);
             // 
             // showXYSliceButton
             // 
@@ -388,7 +388,7 @@
             this.showXYSliceButton.Text = "Show XY slice";
             this.showXYSliceButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.showXYSliceButton.UseVisualStyleBackColor = true;
-            this.showXYSliceButton.CheckedChanged += new System.EventHandler(this.showXYSliceButton_CheckedChanged);
+            this.showXYSliceButton.CheckedChanged += new System.EventHandler(this.updateSliceButtons);
             // 
             // CaveGenForm
             // 

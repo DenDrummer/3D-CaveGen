@@ -81,7 +81,6 @@ namespace _3D_CaveGen
                 }
             }
             updateSliceRange();
-
             updatePicture();
         }
         #endregion
@@ -252,7 +251,7 @@ namespace _3D_CaveGen
                         #region --- convert back to boolean world ---
                         // if 2 or 3 out of the 3 dimensions say it should be a wall, make it a wall.
                         // otherwise make it air. 
-                        world[x, y, z] = !(smoothWorld[x, y, z] > 1);
+                        world[x, y, z] = smoothWorld[x, y, z] <= 1;
                         #endregion
                     }
                 }
@@ -284,19 +283,7 @@ namespace _3D_CaveGen
         #endregion
 
         #region --- display methods ---
-        private void showXYSliceButton_CheckedChanged(object sender, EventArgs e)
-        {
-            updateSliceRange();
-            updatePicture();
-        }
-
-        private void showXZSliceButton_CheckedChanged(object sender, EventArgs e)
-        {
-            updateSliceRange();
-            updatePicture();
-        }
-
-        private void showYZSliceButton_CheckedChanged(object sender, EventArgs e)
+        private void updateSliceButtons(object sender, EventArgs e)
         {
             updateSliceRange();
             updatePicture();
@@ -308,7 +295,7 @@ namespace _3D_CaveGen
             updatePicture();
         }
 
-        private Bitmap getPicture(bool[,] worldSlice)
+        private static Bitmap getPicture(bool[,] worldSlice)
         {
             Bitmap picture = new Bitmap(
                 worldSlice.GetLength(0),
