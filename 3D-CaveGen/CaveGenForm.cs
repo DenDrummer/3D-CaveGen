@@ -251,7 +251,7 @@ namespace _3D_CaveGen
                         #region --- convert back to boolean world ---
                         // if 2 or 3 out of the 3 dimensions say it should be a wall, make it a wall.
                         // otherwise make it air. 
-                        world[x, y, z] = smoothWorld[x, y, z] <= 1;
+                        newWorld[x, y, z] = smoothWorld[x, y, z] <= 1;
                         #endregion
                     }
                 }
@@ -382,6 +382,12 @@ namespace _3D_CaveGen
             else if (showYZSlice)
             {
                 shownSliceBar.Maximum = width - 1;
+            }
+
+            //move index into range if outside
+            if (shownSlice > shownSliceBar.Maximum)
+            {
+                shownSlice = (ushort)shownSliceBar.Maximum;
             }
         }
         #endregion
