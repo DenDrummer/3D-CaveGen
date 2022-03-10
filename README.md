@@ -1,2 +1,2 @@
 # 3D-CaveGen
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d521eb5cb2a14bcc8ad250d6e24749a4)](https://app.codacy.com/manual/DenDrummer/3D-CaveGen?utm_source=github.com&utm_medium=referral&utm_content=DenDrummer/3D-CaveGen&utm_campaign=Badge_Grade_Dashboard)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/36d3c51a09c34d55b23b6c00a33889e9)](https://www.codacy.com/gh/DenDrummer/3D-CaveGen/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DenDrummer/3D-CaveGen&amp;utm_campaign=Badge_Grade)
